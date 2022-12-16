@@ -1,0 +1,35 @@
+.productcard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 30px;
+}
+.Productimage{
+    height: 40vh;
+    justify-self: center;
+    box-shadow: 4px 5px 2px rgb(218, 217, 217);
+}
+.Productimage .displayImage{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.Productimage .displayImage img{
+    height: 30vh;
+    width: 100%;
+}
+.Productimage h4{
+    margin-top: 10px;
+    text-align: center;
+}
+.Productimage p{
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-align: center;
+}
+.Productimage span{
+    color: red;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
