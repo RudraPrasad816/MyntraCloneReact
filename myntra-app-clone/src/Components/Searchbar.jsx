@@ -23,10 +23,6 @@ const Searchbar = () => {
     }
 
     function searchProductByName(){
-        let searchedvalue = document.getElementById("searchvalue").value;
-        let search = data.filter((value)=>{
-            return value.name.toLowerCase() === searchedvalue.toLowerCase()
-        })
     }
 
     return (
