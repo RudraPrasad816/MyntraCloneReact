@@ -4,33 +4,41 @@ import './ComponentStyles/FilterPage.css';
 import data from "../data.js";
 
 
-const FilterPage = () => {
+const FilterPage = (props) => {
 
     //taking variables for data of different category
     const [newData, setNewData] = useState(data);
 
     //function to get data of gender category
-    const genderCategory = (selectedGender) => {
-        if (selectedGender === "") {
+    const genderCategory = (e) => {
+        if (e.target.value === "all") {
+            document.getElementById("product-category").querySelector("input").checked = false
+            document.getElementById("product-category").querySelectorAll("input")[1].checked = false
             setNewData(data);
         } else {
             setNewData(data.filter((ele) => {
-                return ele.gender === selectedGender;
+                return ele.gender === e.target.value;
             }))
         }
     }
 
     //function to get data of different style category
-    const typeCategory = (selectedCategory) => {
-        if (selectedCategory === "folded") {
-            setNewData(newData.filter((ele) => {
-                return ele.folded === "Y";
-            }));
+    const typeCategory = (e) => {
+        if (e.target.checked === false) {
+            if (e.target.value === "folded") {
+                setNewData(newData.filter((ele) => {
+                    return ele.folded === "Y";
+                }));
+            }
+            else if (e.target.value === "white") {
+                setNewData(newData.filter((ele) => {
+                    return ele.link.includes(e.target.value);
+                }))
+            }
         }
-        else if (selectedCategory === "white") {
-            setNewData(newData.filter((ele) => {
-                return ele.link.includes(selectedCategory);
-            }))
+        else {
+            document.getElementById("gender-category").querySelector("input").checked = true;
+            setNewData(data);
         }
     }
 
@@ -38,12 +46,14 @@ const FilterPage = () => {
         <>
             <div className='home'>
                 <div className="filterSection">
-                    <div className="gender-category">
+                    <h4 className='filterheading'>FILTERS:</h4>
+                    <div className="gender-category" id='gender-category'>
                         <h4>Gender</h4>
                         <input
                             type="radio"
                             name="gender"
-                            onClick={() => { genderCategory("") }}
+                            value="all"
+                            onClick={genderCategory}
                         />
                         <label>ALL</label>
                         <br />
@@ -51,7 +61,7 @@ const FilterPage = () => {
                             type="radio"
                             name="gender"
                             value="M"
-                            onClick={() => { genderCategory("M") }}
+                            onClick={genderCategory}
                         />
                         <label>MEN</label>
                         <br />
@@ -59,16 +69,16 @@ const FilterPage = () => {
                             type="radio"
                             name="gender"
                             value="F"
-                            onClick={() => { genderCategory("F") }}
+                            onClick={genderCategory}
                         />
                         <label>WOMEN</label>
                     </div>
-                    <div className="product-category">
+                    <div className="product-category" id='product-category'>
                         <h4>Categories</h4>
                         <input
                             type="checkbox"
                             value="white"
-                            onClick={() => { typeCategory("white") }}
+                            onMouseUp={typeCategory}
                         />
                         <label>White</label>
                         <br />
@@ -76,11 +86,12 @@ const FilterPage = () => {
                             type="checkbox"
                             name="FoldedSleeve"
                             value="folded"
-                            onMouseUp={() => { typeCategory("folded") }}
+                            onMouseUp={typeCategory}
                         />
                         <label>Folded Sleeve</label>
                     </div>
                 </div>
+
                 <Card newData={newData} />
             </div>
         </>

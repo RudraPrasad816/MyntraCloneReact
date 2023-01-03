@@ -3,12 +3,12 @@
     margin: auto;
     padding-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    column-gap: 10px;
+    grid-template-columns: 1fr 5fr;
 }
 .filterSection{
     height: 85vh;
-    border: 1px solid black;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 30px;
     padding-left: 20px;
     text-align: left;
@@ -16,11 +16,13 @@
     top: 14vh;
     left: 0;
 }
-
+.filterSection .filterheading{
+    margin: 0 -15px;
+}
 .filterSection h4{
     font-weight: 300;
     color: rgb(77, 76, 76);
-    margin: 0 0 8px 0;
+    margin: 5px 0 8px 0;
 }
 
 .gender-category, .product-category, .sorting-section{

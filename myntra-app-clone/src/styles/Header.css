@@ -9,6 +9,8 @@ header{
     background: white;
     position: sticky;
     top: 0;
+    border: 0;
+    box-shadow: 1px 1px 8px rgb(232, 232, 232);
 }
 nav{
     height: 100%;
@@ -17,7 +19,6 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 0 rgb(186, 184, 184);
 }
 
 .nav-left{

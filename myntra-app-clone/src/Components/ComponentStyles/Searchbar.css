@@ -9,11 +9,15 @@
     height: 3.5vh;
     width: 25vw;
     padding: 0;
+    position: relative;
 }
 .search-bar input{
-    height: 3.5vh;
+    padding-left: 10px;
+    height: 4.5vh;
     width: 25vw;
-    padding: 0 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(237, 235, 235);
 }
 #product-title-holder{
     margin-top: 1px;
@@ -29,4 +33,12 @@
     display: flex;
     align-items: center;
     border-bottom: 0.1px solid gray;
+}
+.search-bar i{
+   position: absolute;
+   top: 50%;
+   right: 0;
+   transform: translate(-50%, -20%);
+   cursor: pointer;
+   color: rgb(112, 112, 112);
 }

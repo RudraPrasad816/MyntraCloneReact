@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import './ComponentStyles/Searchbar.css';
 import data from "../data.js";
+import { FaSearch } from 'react-icons/fa';
 
 const Searchbar = () => {
+    let id = 0;
 
     const [searchvalue, setValue] = useState("");
     const [suggestion, setSuggestion] = useState([]);
@@ -13,7 +15,6 @@ const Searchbar = () => {
             setSuggestion([]);
         }
         else {
-
             let newSuggestion = data.filter((value) => {
                 return value.name.toLowerCase().includes((e.target.value.toLowerCase()))
             })
@@ -21,13 +22,21 @@ const Searchbar = () => {
         }
     }
 
+    function searchProductByName(){
+        let searchedvalue = document.getElementById("searchvalue").value;
+        let search = data.filter((value)=>{
+            return value.name.toLowerCase() === searchedvalue.toLowerCase()
+        })
+    }
+
     return (
         <div className="search-bar">
-            <input type="text" id="search" placeholder="search your poduct here" onChange={searchProduct} value={searchvalue} ></input>
+            <input type="text" id="searchvalue" placeholder="search your poduct here" onChange={searchProduct} value={searchvalue} ></input>
+            <i onClick={searchProductByName}><FaSearch /></i>
             {suggestion.length !== 0 &&
                 <div id="product-title-holder">
                     {suggestion.map((key) => {
-                        return <div>{key.name.toLowerCase()}</div>;
+                        return <div key={id++}>{key.name.toLowerCase()}</div>;
                     })}
                 </div>
             }

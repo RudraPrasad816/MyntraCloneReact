@@ -2,7 +2,7 @@ import React from "react";
 import './ComponentStyles/Card.css';
 
 const Card = (props) => {
-
+    let id = 0;
     const productDescription = (url) => {
         window.open(url, '_blank', 'noopener,noreferrer');
     }
@@ -10,10 +10,10 @@ const Card = (props) => {
     return (
         <div className="card">
             <div className="productcard">
-                {
+                { 
                     props.newData.map((product) => {
                         return (
-                            <div className="Productimage" onClick={() => { productDescription(product.link) }}>
+                            <div key={id++} className="Productimage" onClick={() => { productDescription(product.link) }}>
                                 <div className="displayImage"><img src={product.otherImages[0]} alt="" /></div>
                                 <h4>{product.name}</h4>
                                 <p>{product.description}</p>
@@ -21,6 +21,7 @@ const Card = (props) => {
                             </div>
                         )
                     })
+                    
                 }
             </div>
         </div>
