@@ -9,7 +9,7 @@
     height: 85vh;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 20px;
     text-align: left;
     position: sticky;
@@ -22,7 +22,7 @@
 .filterSection h4{
     font-weight: 300;
     color: rgb(77, 76, 76);
-    margin: 5px 0 8px 0;
+    margin: 15px 0 8px 0;
 }
 
 .gender-category, .product-category, .sorting-section{
