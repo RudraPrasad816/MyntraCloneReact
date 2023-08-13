@@ -1,0 +1,39 @@
+.home{
+    width: 95%;
+    margin: auto;
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.filterSection{
+    height: 85vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+    position: sticky;
+    top: 14vh;
+    left: 0;
+}
+.filterSection .filterheading{
+    margin: 0 -15px;
+}
+.filterSection h4{
+    font-weight: 300;
+    color: rgb(77, 76, 76);
+    margin: 15px 0 8px 0;
+}
+
+.gender-category, .product-category, .sorting-section{
+    font-size: 0.9rem;
+    font-weight: 300;
+    color:rgb(85, 85, 85);
+    margin: 3px 10px;
+}
+.gender-category input, .product-category input, .sorting-section input{
+    margin: 5px;
+}
+.product-category{
+    margin-top: 25px;
+}

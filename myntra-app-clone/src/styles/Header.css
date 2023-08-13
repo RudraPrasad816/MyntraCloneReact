@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 9vh;
+    width: 100%;
+    background: white;
+    position: sticky;
+    top: 0;
+    border: 0;
+    box-shadow: 1px 1px 8px rgb(232, 232, 232);
+}
+nav{
+    height: 100%;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.logo{
+    height: 10vh;
+    width: auto;
+}
+.logo img{
+    height: 80%;
+    width: auto;
+}
+
+.nav-menu ul{
+    list-style : none;
+    display: flex;
+}
+.nav-menu ul li{
+    padding: 0 10px;
+}
+.nav-menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
